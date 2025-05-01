@@ -1,3 +1,4 @@
+// Implement Prim's, Kruskal's, Dijkstra's algorithm in graph
 #include <cstdio>
 #include <cstdlib>
 #define INF 999999

@@ -1,7 +1,6 @@
 // Implement Hash table using Separate Chaining
 #include <cstdio>
 #include <list>
-
 using namespace std;
 
 class HashTable {

@@ -102,7 +102,7 @@ int main(){
     }
     return 0;
 }
-// Function to insert at beginning
+// Function to insert an element at beginning
 void ListADT::insertBeginning(int val){
     node*newnode = (node*)malloc(sizeof(node));
     if(newnode == NULL){
@@ -122,7 +122,7 @@ void ListADT::insertBeginning(int val){
     }
     head = newnode;
 }
-// Function to insert at end
+// Function to insert an element at end
 void ListADT::insertEnd(int val){
     struct node*newnode = (node*)malloc(sizeof(node));
     if(newnode == NULL){
@@ -142,7 +142,7 @@ void ListADT::insertEnd(int val){
         newnode->next = head;
     }
 }
-// Function to insert element at position 
+// Function to insert an element element at position 
 void ListADT::insertPosition(int val,int pos){
     node*newnode = (node*)malloc(sizeof(node));
     if(newnode == NULL){
@@ -170,7 +170,7 @@ void ListADT::insertPosition(int val,int pos){
     newnode->next = temp->next;
     temp->next = newnode;
 }
-// Function to delete from beginning
+// Function to delete an element from beginning
 int ListADT::deleteBeginning(){
     node*temp = head;
     int deleted;
@@ -189,7 +189,7 @@ int ListADT::deleteBeginning(){
     }
     return deleted;
 }
-// Function to delete from the end 
+// Function to delete an element from the end 
 int ListADT::deleteEnd(){
     node*temp = head;
     int deleted;
@@ -208,7 +208,7 @@ int ListADT::deleteEnd(){
     }
     return deleted;
 }
-// Function to delete from a given position
+// Function to delete an element from a given position
 int ListADT::deletePosition(int pos) {
     if (head == NULL) {
         return -1; 

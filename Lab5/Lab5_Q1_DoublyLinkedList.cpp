@@ -1,3 +1,4 @@
+// Implement doubly linked list
 #include<cstdio>
 #include<cstdlib>
 class ListADT{
@@ -103,7 +104,7 @@ int main(){
     }
     return 0;
 }
-// Function to insert at beginning
+// Function to insert an element at beginning
 void ListADT::insertBeginning(int val){
     node*newnode = (node*)malloc(sizeof(node));
     if(newnode == NULL){
@@ -120,7 +121,7 @@ void ListADT::insertBeginning(int val){
     }
     head = newnode;
 }
-// Function to insert at end
+// Function to insert an element at end
 void ListADT::insertEnd(int val){
     node*newnode = (node*)malloc(sizeof(node));
     if(newnode == NULL){
@@ -137,7 +138,7 @@ void ListADT::insertEnd(int val){
         head = tail = newnode;
     }
 }
-// Function to insert at position
+// Function to insert an element at position
 void ListADT::insertPosition(int val,int pos){
     node*newnode = (node*)malloc(sizeof(node));
     if(newnode == NULL){
@@ -170,7 +171,7 @@ void ListADT::insertPosition(int val,int pos){
         temp->next = newnode;
     }
 }
-//Function to delete from beginning
+//Function to delete an element from beginning
 int ListADT::deleteBeginning(){
     if(head == NULL){
         return -1;
@@ -186,7 +187,7 @@ int ListADT::deleteBeginning(){
     free(temp);
     return deleted;
 }
-// Function to delete from end
+// Function to delete an element from end
 int ListADT::deleteEnd(){
     if(tail == NULL){
         return -1;
@@ -202,7 +203,7 @@ int ListADT::deleteEnd(){
     free(temp);
     return deleted;
 }
-// Function to delete from position
+// Function to delete an element from position
 int ListADT::deletePosition(int pos){
     if(pos<1){
         return -1;
@@ -254,7 +255,7 @@ void ListADT::display(){
         temp = temp->prev;
     }
 }
-// Function to search an element
+// Function to search for an element
 int ListADT::search(int val){
     node*temp = head;
     if(temp == NULL){

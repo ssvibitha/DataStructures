@@ -1,7 +1,8 @@
+// Program to convert infix to postfix expression
 #include <cstdio>
 #include <cstring>
 #include <cctype>
-#include "stack_ll.h"
+#include "Lab6_Q3_StackHeader.h"
 
 #define MAX 100 
 

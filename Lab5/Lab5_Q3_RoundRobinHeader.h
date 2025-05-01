@@ -61,7 +61,7 @@ void RoundRobin::display(){
         temp = temp->next;
     }while(temp!=head);
 }
-// Function to delete at beginning
+// Function to delete from beginning
 void RoundRobin::deleteBeginning() {
     if(head == NULL){  
         return;

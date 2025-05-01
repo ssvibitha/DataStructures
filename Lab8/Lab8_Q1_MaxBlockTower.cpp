@@ -1,16 +1,11 @@
+// Find the maximum blocks on a tower
 #include<iostream>
 #include<vector>
 #include<algorithm>
 using namespace std;
-void max(vector<int>&a, int n){
-    for(int i=0;i<n;i++){
-        if(a[i]>a[0]){
-            int transfer = (a[i]-a[0]+1)/2;
-            a[0]+=transfer;
-            a[i]-=transfer;
-        }
-    }
-}
+
+void max(vector<int>&a, int n);
+
 int main(){
     int t;
     cout<<"Enter number of test cases:"<<" ";
@@ -29,4 +24,14 @@ int main(){
         cout<<"Output:"<<a[0]<<endl;
     }
     return 0;
+}
+// Function to find the maximum number of blocks in a tower
+void max(vector<int>&a, int n){
+    for(int i=0;i<n;i++){
+        if(a[i]>a[0]){
+            int transfer = (a[i]-a[0]+1)/2;
+            a[0]+=transfer;
+            a[i]-=transfer;
+        }
+    }
 }

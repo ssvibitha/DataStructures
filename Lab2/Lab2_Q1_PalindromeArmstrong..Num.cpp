@@ -2,6 +2,73 @@
 #include<cstdio>
 #include<cstdlib>
 #include<cmath>
+
+int checkPalindrome(int *num);
+int checkArmstrong(int *num);
+int checkPerfect(int *num);
+
+int main(){
+    int *num = (int*)malloc(sizeof(int));
+    int *choice =(int *)malloc(sizeof(int));
+    int *status = (int*)malloc(sizeof(int));
+
+    while(1){
+
+        printf("-------Menu-------\n");
+        printf("1.  Palindrome\n");
+        printf("2.  Armstrong\n");
+        printf("3.  Perfect\n");
+        printf("4.  Exit\n");
+
+        printf("Enter your choice:");
+        scanf("%d",choice);
+
+        if(*choice != 4 ){
+            printf("Enter a number: ");
+            scanf("%d",num);
+        }
+
+        switch(*choice){
+            case 1:
+                *status = checkPalindrome(num); 
+                if (*status == -1){
+                    printf("%d is not a palindrome number\n",*num);
+                }else{
+                    printf("%d is a palindrome number\n",*num);
+                }
+
+                break;
+            case 2:
+                *status = checkArmstrong(num); 
+                if (*status == -1){
+                    printf("%d is not an armstrong number\n",*num);
+                }else{
+                    printf("%d is an armstrong number\n",*num);
+                }
+
+                break;
+            case 3:
+                *status = checkPalindrome(num); 
+                if (*status == -1){
+                    printf("%d is not a perfect number\n",*num);
+                }else{
+                    printf("%d is a perfect number\n",*num);
+                }
+
+                break;
+            case 4:
+                printf("Terminating program...\n");
+                return 0;
+            default:
+                printf("Invalid choice... Try again\n");
+        }
+    }
+    free(num);
+    free(choice);
+    free(status);
+    return 0;
+}
+// Function to check if number is palindrome
 int checkPalindrome(int *num){
     int *temp = (int*)malloc(sizeof(int));
     int *rev = (int*)malloc(sizeof(int));
@@ -19,6 +86,7 @@ int checkPalindrome(int *num){
     free(temp);
     free(rev);
 }
+// Function to check if number is armstrong number
 int checkArmstrong(int *num){
     int *temp = (int*)malloc(sizeof(int));
     *temp = *num;
@@ -45,6 +113,7 @@ int checkArmstrong(int *num){
     free(dig_count);
 
 }
+// Function to check if number is a perfect number
 int checkPerfect(int *num){
     int *temp = (int*)malloc(sizeof(int));
     *temp = *num;
@@ -64,65 +133,4 @@ int checkPerfect(int *num){
     free(temp);
     free(perf);
     free(i);
-}
-int main(){
-    int *num = (int*)malloc(sizeof(int));
-    int *choice =(int *)malloc(sizeof(int));
-    int *status = (int*)malloc(sizeof(int));
-
-    while(1){
-
-        printf("-------Menu-------\n");
-        printf("1.  Palindrome\n");
-        printf("2.  Armstrong\n");
-        printf("3.  Perfect\n");
-        printf("4.  Exit\n");
-
-        printf("Enter your choice:");
-        scanf("%d",choice);
-
-        if(*choice != 4 ){
-            printf("Enter a number: ");
-            scanf("%d",num);
-        }
-
-        switch(*choice){
-            case 1:
-                *status = checkPalindrome(num); //Palindrome function
-                if (*status == -1){
-                    printf("%d is not a palindrome number\n",*num);
-                }else{
-                    printf("%d is a palindrome number\n",*num);
-                }
-
-                break;
-            case 2:
-                *status = checkArmstrong(num); //Armstrong function
-                if (*status == -1){
-                    printf("%d is not an armstrong number\n",*num);
-                }else{
-                    printf("%d is an armstrong number\n",*num);
-                }
-
-                break;
-            case 3:
-                *status = checkPalindrome(num); //Perfect function
-                if (*status == -1){
-                    printf("%d is not a perfect number\n",*num);
-                }else{
-                    printf("%d is a perfect number\n",*num);
-                }
-
-                break;
-            case 4:
-                printf("Terminating program...\n");
-                return 0;
-            default:
-                printf("Invalid choice... Try again\n");
-        }
-    }
-    free(num);
-    free(choice);
-    free(status);
-    return 0;
 }

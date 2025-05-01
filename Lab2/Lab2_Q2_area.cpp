@@ -14,18 +14,11 @@ public:
     area_calc(int l, int b) : length(l), breadth(b), height(0) {}
     area_calc(int l, int b, int h) : length(l), breadth(b), height(h) {}
 
-    int getarea_Square() { 
-        return length * length; 
-    }
-    int getarea_Cube() { 
-        return 6 * length * length; 
-    }
-    int getarea_Rectangle() { 
-        return length * breadth; 
-    }
-    int getarea_Cuboid() {
-         return 2 * (length * breadth + length * height + height * breadth); 
-    }
+    int getarea_Square();
+    int getarea_Cube();
+    int getarea_Rectangle();
+    int getarea_Cuboid();
+
 };
 
 int main() {
@@ -51,7 +44,7 @@ int main() {
 
             {
                 area_calc square(length);
-                result = square.getarea_Square();//Area of square
+                result = square.getarea_Square();
                 printf("Area of square = %d sq units\n", result);
             }
             break;
@@ -64,7 +57,7 @@ int main() {
 
             {
                 area_calc cube(length);
-                result = cube.getarea_Cube();//Area of cube
+                result = cube.getarea_Cube();
                 printf("Area of cube = %d sq units\n", result);
             }
             break;
@@ -82,7 +75,7 @@ int main() {
 
             {
                 area_calc rectangle(length, breadth);
-                result = rectangle.getarea_Rectangle();//Area of rectangle
+                result = rectangle.getarea_Rectangle();
                 printf("Area of rectangle = %d sq units\n", result);
             }
             break;
@@ -105,7 +98,7 @@ int main() {
 
             {
                 area_calc cuboid(length, breadth, height);
-                result = cuboid.getarea_Cuboid();//Area of cuboid
+                result = cuboid.getarea_Cuboid();
                 printf("Area of cuboid = %d sq units\n", result);
             }
             break;
@@ -120,4 +113,20 @@ int main() {
     }
 
     return 0;
+}
+// Function to compute area of square
+int area_calc ::getarea_Square() { 
+    return length * length; 
+}
+// Function to compute area of cube
+int area_calc ::getarea_Cube() { 
+    return 6 * length * length; 
+}
+// Function to compute area of rectangle
+int area_calc ::getarea_Rectangle() { 
+    return length * breadth; 
+}
+// Function to compute area of cuboid
+int area_calc ::getarea_Cuboid() {
+     return 2 * (length * breadth + length * height + height * breadth); 
 }

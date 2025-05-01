@@ -1,8 +1,10 @@
 // Process the string such that the final string does not include the '+' symbol 
 // and the immediate left non-'+' symbol.
-#include "stack_ll.h"
+#include "Lab7_Q4_StackHeader.h"
+
 void process_string(char *str, char*result);
 void reverse_string(char *str,int index);
+
 int main(){
     char str[100];
     char result[100];

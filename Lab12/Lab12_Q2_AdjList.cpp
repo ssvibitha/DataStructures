@@ -86,7 +86,6 @@ void AdjList::insertEdge(int src,int dest){
             }
         }
         table[src].push_back(dest);
-        // table[dest].push_back(src); // For undirected graph
         printf("Edge inserted between %d and %d.\n", src, dest);
     } else {
         printf("Invalid node indices.\n");

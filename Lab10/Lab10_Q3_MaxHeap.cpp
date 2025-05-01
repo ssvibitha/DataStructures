@@ -1,4 +1,4 @@
-// Implement priority queue adt using heap
+// Implement priority queue ADT using max heap
 #include <cstdio>
 #include <cstdlib>
 #define MAX_SIZE 100

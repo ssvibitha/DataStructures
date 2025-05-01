@@ -104,6 +104,7 @@ int main(){
         }
     }
 }
+// Function to display array
 void LISTADT:: display(){
     if(size == 0){
         printf("[]\n");
@@ -114,6 +115,7 @@ void LISTADT:: display(){
         printf("%d%s",arr[i], i== size-1 ? "]\n":",");
     }
 }
+// Function to insert at beginning
 void LISTADT:: insertBeginning(int val){
     if(size >= SIZE_ARR){
         printf("Array is full...Element cannot be inserted!!\n");
@@ -125,6 +127,7 @@ void LISTADT:: insertBeginning(int val){
     arr[0]= val;
     size++;
 }
+// Function to insert at the end
 void LISTADT:: insertEnd(int val){
     if(size >= SIZE_ARR){
         printf("Array is full...Element cannot be inserted!!\n");
@@ -133,6 +136,7 @@ void LISTADT:: insertEnd(int val){
     arr[size] = val;
     size++;
 }
+// Function to insert at a position
 void LISTADT:: insertPos(int val,int pos){
     if(size >= SIZE_ARR){
         printf("Array is full...Element cannot be inserted!!\n");
@@ -148,7 +152,7 @@ void LISTADT:: insertPos(int val,int pos){
     arr[pos-1]= val;
     size++;
 }
-
+// Function to delete from beginning
 bool LISTADT:: deleteBeginning(int &deleted){
     if(size == 0){
         printf("List is empty...Cannot delete\n");
@@ -161,6 +165,7 @@ bool LISTADT:: deleteBeginning(int &deleted){
     size--;
     return true;
 }
+// Function to delete from the end
 bool LISTADT:: deleteEnd(int &deleted){
     if(size == 0){
         printf("List is empty...Cannot delete\n");
@@ -170,6 +175,7 @@ bool LISTADT:: deleteEnd(int &deleted){
     size--;
     return true;
 }
+// Function to delete from a position
 bool LISTADT:: deletePos(int pos, int &deleted){
     if(size == 0){
         printf("List is empty...Cannot delete\n");
@@ -186,6 +192,7 @@ bool LISTADT:: deletePos(int pos, int &deleted){
     size--;
     return true;
 }
+// Function to reverse an array
 void LISTADT:: reverse(int start,int end){
     
     while(start <= end){
@@ -196,6 +203,7 @@ void LISTADT:: reverse(int start,int end){
         end--;
     }
 }
+// Function to rotate an array
 void LISTADT:: rotate(int k){
     if(size == 0){
         printf("List is empty...Cannot rotate\n");
@@ -206,6 +214,7 @@ void LISTADT:: rotate(int k){
     reverse(0,k-1);
     reverse(k,size-1);
 }
+// Function to search for an element in array
 int LISTADT::search(int target){
     if(size == 0){
         return -2;

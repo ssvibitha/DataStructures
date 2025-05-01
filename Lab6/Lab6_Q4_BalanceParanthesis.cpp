@@ -1,7 +1,9 @@
+// Program to balance paranthesis
 #include <cstdio>
-#include "stack_ll.h" 
+#include "Lab6_Q3_StackHeader.h" 
 
 bool isBalanced(const char *str);
+
 int main() {
     int choice;
     char str[100]; 

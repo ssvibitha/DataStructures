@@ -46,45 +46,44 @@ int main(){
             case 1: 
                 printf("Enter value to insert at beginning:");
                 scanf("%d",&val);
-                list.insertBeginning(val);//Insert element at beginning
-                //list.display();
+                list.insertBeginning(val);
                 break;
             case 2: 
                 printf("Enter value to insert at end:");
                 scanf("%d",&val);
-                list.insertEnd(val);//Insert element at end
+                list.insertEnd(val);
                 break;
             case 3:
                 printf("Enter positon to add element: ");
                 scanf("%d",&pos);
                 printf("Enter value to insert at position:");
                 scanf("%d",&val);
-                list.insertPosition(pos,val);//Insert element at a position
+                list.insertPosition(pos,val);
                 break;
             case 4: 
-                deleted = list.deleteBeginning();//Delete element from beginning
+                deleted = list.deleteBeginning();
                 if(deleted != -1){
-                    printf("Deleted element:%d\n",deleted);//Display deleted element
+                    printf("Deleted element:%d\n",deleted);
                 }
                 break;
             case 5: 
-                deleted = list.deleteEnd();//Delete from the end
+                deleted = list.deleteEnd();
                 if(deleted != -1){
-                    printf("Deleted element: %d\n",deleted);//Display deleted element  
+                    printf("Deleted element: %d\n",deleted); 
                 }
                 break;
             case 6: 
                 printf("Enter positon to delete element: ");
                 scanf("%d",&pos);
-                deleted = list.deletePosition(pos);//Delete element from position
+                deleted = list.deletePosition(pos);
                 if(deleted != -1){
-                    printf("%d",deleted);//Display deleted element
+                    printf("%d",deleted);
                 }
                 break;
             case 7:
                 printf("Enter element to be searched in linked list: ");
                 scanf("%d",&val);
-                result = list.search(val);//Search for an element
+                result = list.search(val);
                 if(result == -1){
                     printf("Element not found\n");
                 }else if (result!= -2){
@@ -92,14 +91,13 @@ int main(){
                 }
                 break;
             case 8: 
-                list.display();//Display linked list
+                list.display();
                 break;
             case 9:
-                list.displayReverse();//Display reversed linked list
+                list.displayReverse();
                 break;
             case 10: 
-                list.reverseLink();//Reverse the linked list
-                //list.display();
+                list.reverseLink();
                 break;
             case 11: 
                 printf("Terminating program...\n");
@@ -110,7 +108,8 @@ int main(){
     }
     return 0;
 }
-void linkedList ::insertBeginning(int val){//Insert at beginning
+// Function to insert element at beginning
+void linkedList ::insertBeginning(int val){
     linked* newnode = (linked*)malloc(sizeof(linked));
     if(newnode == NULL){
         printf("Memory allocation failed....\n");
@@ -120,7 +119,8 @@ void linkedList ::insertBeginning(int val){//Insert at beginning
     newnode->next = head;
     head= newnode;
 }
-void linkedList ::insertEnd(int val){//Insert at end
+// Function to insert element at end
+void linkedList ::insertEnd(int val){
     linked* newnode = (linked*)malloc(sizeof(linked));
     if(newnode == NULL){
         printf("Memory allocation failed....\n");
@@ -138,7 +138,8 @@ void linkedList ::insertEnd(int val){//Insert at end
         temp->next = newnode;
     }
 }
-void linkedList ::insertPosition(int pos, int val){//Insert at position
+// Function to insert element at position
+void linkedList ::insertPosition(int pos, int val){
     linked* newnode = (linked*)malloc(sizeof(linked));
     if(newnode == NULL){
         printf("Memory allocation failed....\n");
@@ -165,7 +166,8 @@ void linkedList ::insertPosition(int pos, int val){//Insert at position
     temp->next = newnode->next;
     temp->next = newnode;
 }
-int linkedList ::deleteBeginning(){//Delete at beginning
+// Function to delete element from beginning
+int linkedList ::deleteBeginning(){
     linked *nodeToDelete= head;
     if(nodeToDelete == NULL){
         printf("List is empty...Deletion at beginning not possible\n");
@@ -176,7 +178,8 @@ int linkedList ::deleteBeginning(){//Delete at beginning
     free(nodeToDelete);
     return deleted;
 }
-int linkedList :: deleteEnd(){//Delete at end
+// Function to delete element from end
+int linkedList :: deleteEnd(){
     if(head == NULL){
         printf("List is empty...Deletion at end not possible\n");
         return -1;
@@ -197,7 +200,8 @@ int linkedList :: deleteEnd(){//Delete at end
     temp->next = NULL;
     return deleted;
 }
-int linkedList :: deletePosition(int pos){//Delete at position
+//Function to delete element from position
+int linkedList :: deletePosition(int pos){
     int deleted;
     if(head == NULL){
         printf("List is empty...Deletion at position not possible\n");
@@ -227,7 +231,8 @@ int linkedList :: deletePosition(int pos){//Delete at position
     free(toDelete);
     return deleted;
 }
-int linkedList :: search(int val){//Search
+// Function to search for an element
+int linkedList :: search(int val){
     if(head == NULL){
         printf("List is empty...Searching is not possible\n");
         return -2;
@@ -244,7 +249,8 @@ int linkedList :: search(int val){//Search
         return count-1;
     }
 }
-void linkedList :: display(){//Display
+// Function to display linked list
+void linkedList :: display(){
     linked *temp = head;
     if(temp == NULL){
         printf("List is empty..\n");
@@ -256,7 +262,8 @@ void linkedList :: display(){//Display
         temp=temp->next;
     }
 }
-void linkedList :: displayReverse(){//Display reverse
+// Function to display reverese linked list
+void linkedList :: displayReverse(){
     linked* temp = head;
     int count = 0;
     int arr[100];  
@@ -269,7 +276,8 @@ void linkedList :: displayReverse(){//Display reverse
         printf("%d%s", arr[i], i == 0 ? "]\n" : ", ");
     }
 }
-void linkedList :: reverseLink(){//Reverse link
+// Function to revere the link of linked list
+void linkedList :: reverseLink(){
 
     linked* prev = NULL;
     linked* current = head;
