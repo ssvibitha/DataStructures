@@ -142,7 +142,7 @@ void LISTADT:: insertPos(int val,int pos){
         printf("Array is full...Element cannot be inserted!!\n");
         return;
     }
-    if(pos<1 and pos >size){
+    if(pos<1 && pos >size){
         printf("Invalid position\n");
         return;
     }
