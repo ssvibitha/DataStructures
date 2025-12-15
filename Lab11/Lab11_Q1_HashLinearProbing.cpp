@@ -78,7 +78,6 @@ void HashTable::insert(int key){
         return;
     }
     int index = Hashfn(key);
-    int i =0;
     int start = index;
     while(table[index] != EMPTY && table[index]!= DELETED){
         if(table[index] == key){
