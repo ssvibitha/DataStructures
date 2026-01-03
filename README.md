@@ -15,8 +15,9 @@ g++ -o fileObject.exe file.cpp
 ```
 
 ## To run the compiled program use the command, 
-
+```
 ./fileObject.exe
+```
 
 ## Folder Overview
 
