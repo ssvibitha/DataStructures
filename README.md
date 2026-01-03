@@ -10,7 +10,9 @@ Compiler: GCC compiler
 
 ## To compile the program use the command, 
 
+```
 g++ -o fileObject.exe file.cpp
+```
 
 ## To run the compiled program use the command, 
 
